@@ -24,10 +24,13 @@ jobs:
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./input.css -o ./output.css --minify
 
+      - name: List Files (Debugging)
+        run: ls -R
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # The branch GitHub Pages will use
+          branch: main  # The branch GitHub Pages will use
           folder: ./        # Deploy the root directory
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret token for authentication
