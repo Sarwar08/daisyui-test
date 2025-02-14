@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main  # The branch GitHub Pages will use
+          branch: gh-pages  # Deploy to the gh-pages branch
           folder: ./        # Deploy the root directory
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret token for authentication
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the PAT for authentication
